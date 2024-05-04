@@ -10,7 +10,7 @@ pipeline {
         
         stage("run job"){
             steps{
-                sh "docker compose up -d"
+                sh "docker compose down && docker compose build && docker compose up -d"
             }
         }
     }
